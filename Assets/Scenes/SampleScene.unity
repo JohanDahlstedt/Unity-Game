@@ -386,7 +386,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1143120778}
   m_Father: {fileID: 1375528529}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -614,11 +615,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143120777}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6, z: 1.98}
+  m_LocalPosition: {x: 0, y: -0.12, z: 1.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1375528529}
-  m_RootOrder: 2
+  m_Father: {fileID: 963194228}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1163087289
 GameObject:
@@ -763,7 +764,6 @@ Transform:
   m_Children:
   - {fileID: 1426103368}
   - {fileID: 963194228}
-  - {fileID: 1143120778}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -902,7 +902,6 @@ GameObject:
   - component: {fileID: 1830983518}
   - component: {fileID: 1830983517}
   - component: {fileID: 1830983519}
-  - component: {fileID: 1830983520}
   m_Layer: 0
   m_Name: TestCube Blue
   m_TagString: Untagged
@@ -1025,20 +1024,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theDest: {fileID: 1143120778}
-  thrust: 200
-  rb: {fileID: 0}
---- !u!114 &1830983520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1830983512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff92b8a6b522f0243b8d2c5d10c35059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2067048469
 GameObject:
   m_ObjectHideFlags: 0

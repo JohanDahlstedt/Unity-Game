@@ -16,6 +16,7 @@ public class Pickup : MonoBehaviour
     void Update()
     {
 
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             int x = Screen.width / 2;
