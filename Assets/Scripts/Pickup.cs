@@ -15,8 +15,6 @@ public class Pickup : MonoBehaviour
 
     void Update()
     {
-
-
         if (Input.GetKeyDown(KeyCode.E))
         {
             int x = Screen.width / 2;
@@ -33,6 +31,7 @@ public class Pickup : MonoBehaviour
                     this.gameObject.transform.position = theDest.position;
                     this.gameObject.transform.parent = GameObject.Find("Destination").transform;
                     this.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                    this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
                 }
             }
             else if (carrying)
@@ -49,6 +48,7 @@ public class Pickup : MonoBehaviour
     }
     void dropObject()
     {
+        this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
         GetComponent<Rigidbody>().useGravity = true;
         GetComponent<BoxCollider>().enabled = true;
         this.gameObject.transform.parent = null;
