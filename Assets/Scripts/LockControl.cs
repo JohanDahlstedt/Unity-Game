@@ -38,7 +38,8 @@ public class LockControl : MonoBehaviour
         }
         if (result[0] == correctCombination[0] && result[1] == correctCombination[1] && result[2] == correctCombination[2])
         {
-            Destroy(GameObject.FindWithTag("LockedDoor1"));
+            GameObject.FindWithTag("LockedBox1").transform.position = new Vector3(-28.175f, 7.277f, 42f);
+            GameObject.FindWithTag("LockedBox1").transform.Rotate(0, 0, 90);
         }
     }
     private void OnDestroy()
