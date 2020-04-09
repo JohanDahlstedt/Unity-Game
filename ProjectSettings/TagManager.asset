@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - LockedDoor1
+  - LockedDoor2
+  - LockedDoor3
+  - LockedDoor4
+  - LockedDoor5
+  - LockedBox1
   layers:
   - Default
   - TransparentFX
