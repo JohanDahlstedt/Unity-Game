@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class LockControl : MonoBehaviour
 {
+    public int first;
+    public int second;
+    public int third;
+
     private int[] result, correctCombination;
+
     private void Start()
     {
-        result = new int[] {1,1,1};
-        correctCombination = new int[] {5,2,8};
+        result = new int[] { 1, 1, 1 };
+        correctCombination = new int[] { first, second, third };
         Rotate.Rotated += CheckResults;
     }
 
