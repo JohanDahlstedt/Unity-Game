@@ -20,7 +20,7 @@ public class LockControl : MonoBehaviour
 
        
 
-        result = new int[] { 1, 1, 1 };
+        result = new int[] { 6, 6, 6 };
         correctCombination = new int[] { first, second, third };
 
         Rotate.Rotated += CheckResults;
@@ -43,7 +43,8 @@ public class LockControl : MonoBehaviour
                 break;
         }
         if (result[0] == correctCombination[0] && result[1] == correctCombination[1] && result[2] == correctCombination[2])
-        {
+        {   
+            
             GameObject.FindWithTag("LockedBox1").transform.position = new Vector3(-28.175f, 7.277f, 42f);
             GameObject.FindWithTag("LockedBox1").transform.Rotate(0, 0, 90);
         }
