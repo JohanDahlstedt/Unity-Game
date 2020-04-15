@@ -9,9 +9,8 @@ public class OpenSesame : MonoBehaviour
         if (collision.gameObject.tag == "LockedDoor1")
         {
             Debug.Log("Hit Door 1");
-            Destroy(collision.gameObject);
-            //collision.gameObject.transform.Rotate(0f, 90f, 0f);
-            //collision.gameObject.transform.position = new Vector3(2.9f, 7.47f, 16.82f);
+            collision.gameObject.transform.Rotate(0f, 90f, 0f);
+            collision.gameObject.transform.position = new Vector3(2.9f, 7.47f, 16.82f);
         }
 
         if (collision.gameObject.tag == "LockedDoor2")
