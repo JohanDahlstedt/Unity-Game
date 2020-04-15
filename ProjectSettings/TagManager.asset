@@ -10,6 +10,7 @@ TagManager:
   - LockedDoor4
   - LockedDoor5
   - LockedBox1
+  - Key1
   layers:
   - Default
   - TransparentFX

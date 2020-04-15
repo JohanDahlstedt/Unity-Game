@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    public Transform theDest;
+    /*public Transform theDest;
     bool carrying;
     GameObject mainCamera;
 
@@ -52,5 +52,5 @@ public class Pickup : MonoBehaviour
         GetComponent<Rigidbody>().useGravity = true;
         GetComponent<BoxCollider>().enabled = true;
         this.gameObject.transform.parent = null;
-    }
+    }*/
 }

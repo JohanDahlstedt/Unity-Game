@@ -7,6 +7,7 @@ public class LockControl : MonoBehaviour
     public int first;
     public int second;
     public int third;
+    public int CheckIfOpened = 0;
 
     private int[] result, correctCombination;
 
@@ -33,11 +34,13 @@ public class LockControl : MonoBehaviour
                 result[2] = number;
                 break;
         }
-        if (result[0] == correctCombination[0] && result[1] == correctCombination[1] && result[2] == correctCombination[2])
+
+        if (result[0] == correctCombination[0] && result[1] == correctCombination[1] && result[2] == correctCombination[2] && CheckIfOpened == 0)
         {
 
             GameObject.FindWithTag("LockedBox1").transform.position = new Vector3(-19.93f, 2.49f, -1.23f);
             GameObject.FindWithTag("LockedBox1").transform.Rotate(0, 0, 90);
+            CheckIfOpened = 1;
         }
     }
     private void OnDestroy()
