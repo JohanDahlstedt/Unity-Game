@@ -23,9 +23,9 @@ public class Rotate : MonoBehaviour
         }
     }
 
-        private IEnumerator RotateWheel()
-        {
-            coroutineAllowed = false;
+    private IEnumerator RotateWheel()
+    {
+        coroutineAllowed = false;
 
         for (int i = 0; i <= 11; i++)
         {
