@@ -11,6 +11,7 @@ public class OpenInventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
+            Debug.Log("1");
             var canvGroup = GetComponent<CanvasGroup>();
 
             StartCoroutine(DoFade(canvGroup, canvGroup.alpha, mFaded ? 1 : 0));
