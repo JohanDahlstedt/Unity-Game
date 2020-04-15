@@ -2083,6 +2083,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5076798556035486163, guid: 46bf75064ca03ab4398434e92d631010, type: 3}
+--- !u!114 &765916703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765916700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bee501d4eec98641820e905fd1f86f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColor: {r: 1, g: 1, b: 1, a: 0}
+  mouseOverColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 0.57254905}
 --- !u!4 &765916705 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 46bf75064ca03ab4398434e92d631010,
@@ -2731,6 +2745,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 949861573}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &949861580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949861574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bee501d4eec98641820e905fd1f86f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColor: {r: 1, g: 1, b: 1, a: 0}
+  mouseOverColor: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 0.57254905}
 --- !u!1 &956151928
 GameObject:
   m_ObjectHideFlags: 0
@@ -4857,6 +4885,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5076798556035486163, guid: 46bf75064ca03ab4398434e92d631010, type: 3}
+--- !u!114 &1553249278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553249275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bee501d4eec98641820e905fd1f86f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColor: {r: 1, g: 1, b: 1, a: 0}
+  mouseOverColor: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 0.57254905}
 --- !u!4 &1553249280 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 46bf75064ca03ab4398434e92d631010,
@@ -5703,7 +5745,7 @@ BoxCollider:
   m_GameObject: {fileID: 2067048469}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
