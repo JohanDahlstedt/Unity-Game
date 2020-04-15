@@ -14,19 +14,16 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
-
         controller.Move(move * speed * Time.deltaTime);      
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
+        if (item != null)
         {
-            IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
-            if (item != null)
-            {
-                inventory.AddItem(item);
-            }
+            inventory.AddItem(item);
         }
     }
 }
+

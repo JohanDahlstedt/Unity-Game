@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Hightlight : MonoBehaviour
 {
-
     public Color startColor;
     public Color mouseOverColor;
+
+    void Start()
+    {
+        GetComponent<Renderer>().material.SetColor("_Color", startColor);
+    }
 
     void OnMouseEnter()
     {
@@ -17,5 +21,4 @@ public class Hightlight : MonoBehaviour
     {
         GetComponent<Renderer>().material.SetColor("_Color", startColor);
     }
-
 }
