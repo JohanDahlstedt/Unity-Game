@@ -22,7 +22,6 @@ public class HUD : MonoBehaviour
 
             if (image.enabled)
             {
-
                 image.enabled = true;
                 image.sprite = e.Item.Image;
 
