@@ -17,13 +17,22 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(move * speed * Time.deltaTime);      
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit hit)
+    void OnTriggerStay(Collider collision)
+    {
+        if (collision.gameObject.name == "Key1" && Input.GetKeyDown(KeyCode.E))
+        {
+            IInventoryItem item = collision.GetComponent<IInventoryItem>();
+            inventory.AddItem(item);
+        }
+    }
+
+    /*private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
         if (item != null)
         {
             inventory.AddItem(item);
         }
-    }
+    }*/ 
 }
 

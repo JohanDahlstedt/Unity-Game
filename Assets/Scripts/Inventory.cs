@@ -28,8 +28,7 @@ public class Inventory : MonoBehaviour
                 if (ItemAdded != null)
                 {
                     ItemAdded(this, new InventoryEventArgs(item));
-                }
-                
+                }            
             }
         }
     }

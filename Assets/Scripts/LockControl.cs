@@ -9,11 +9,10 @@ public class LockControl : MonoBehaviour
     public int third;
     public int CheckIfOpened = 0;
 
-    
-
-
     private int[] result, correctCombination;
    
+
+    public GameObject key;
 
     private void Start()
    
@@ -52,6 +51,9 @@ public class LockControl : MonoBehaviour
 
             GameObject.FindWithTag("LockedBox1").transform.Rotate(0, 0, 90);
             CheckIfOpened = 1;
+
+            key.SetActive(true);
+
         }
     }
     private void OnDestroy()
