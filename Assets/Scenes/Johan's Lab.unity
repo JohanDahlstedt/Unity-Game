@@ -683,7 +683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &240448827
 Transform:
   m_ObjectHideFlags: 0
@@ -4940,6 +4940,7 @@ MonoBehaviour:
   second: 4
   third: 8
   CheckIfOpened: 0
+  key: {fileID: 240448826}
 --- !u!4 &1559229462
 Transform:
   m_ObjectHideFlags: 0
