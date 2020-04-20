@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Oskar's lab.unity
+    path: Assets/Oskars stuff/Oskar's lab.unity
     guid: 0b50103548e370845bdcc3997508ffaa
   m_configObjects: {}
