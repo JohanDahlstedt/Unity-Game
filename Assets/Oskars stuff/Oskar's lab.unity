@@ -10158,17 +10158,17 @@ MonoBehaviour:
         serializedVersion: 2
         x: 59
         y: 108
-        width: 100
+        width: 120.4
         height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
       transitions:
       - fsmEvent:
-          name: E pressed
-          isSystemEvent: 0
+          name: LEVEL LOADED
+          isSystemEvent: 1
           isGlobal: 0
-        toState: 
+        toState: "Tillst\xE5nd 1"
         linkStyle: 0
         linkConstraint: 0
         colorIndex: 0
@@ -10225,12 +10225,14 @@ MonoBehaviour:
       hideUnused: 0
       transitions: []
       actionData:
-        actionNames: []
-        customNames: []
-        actionEnabled: 
-        actionIsOpen: 
-        actionStartIndex: 
-        actionHashCodes: 
+        actionNames:
+        - HutongGames.PlayMaker.Actions.GetButton
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 5ef27103
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -10240,31 +10242,49 @@ MonoBehaviour:
         fsmEventTargetParams: []
         fsmPropertyParams: []
         layoutOptionParams: []
-        fsmStringParams: []
+        fsmStringParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: Fire1
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
         fsmEnumParams: []
         fsmFloatParams: []
         fsmIntParams: []
-        fsmBoolParams: []
+        fsmBoolParams:
+        - useVariable: 1
+          name: 1
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams: []
-        byteData: 
+        byteData: 00
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 
-        paramName: []
-        paramDataPos: 
-        paramByteDataSize: 
+        paramDataType: 120000001100000001000000
+        paramName:
+        - buttonName
+        - storeResult
+        - everyFrame
+        paramDataPos: 000000000000000000000000
+        paramByteDataSize: 000000000000000001000000
     events:
     - name: APPLICATION QUIT
+      isSystemEvent: 1
+      isGlobal: 0
+    - name: LEVEL LOADED
       isSystemEvent: 1
       isGlobal: 0
     - name: MOUSE DOWN
@@ -10273,14 +10293,17 @@ MonoBehaviour:
     - name: 
       isSystemEvent: 0
       isGlobal: 0
-    - name: E pressed
-      isSystemEvent: 0
-      isGlobal: 0
     globalTransitions: []
     variables:
       floatVariables: []
       intVariables: []
-      boolVariables: []
+      boolVariables:
+      - useVariable: 1
+        name: 1
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 0
       stringVariables: []
       vector2Variables: []
       vector3Variables: []
@@ -10295,7 +10318,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 
+      variableCategoryIDs: 00000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -10306,14 +10329,11 @@ MonoBehaviour:
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
     preprocessed: 0
-    ExposedEvents:
-    - name: E pressed
-      isSystemEvent: 0
-      isGlobal: 0
+    ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
     EnableBreakpoints: 1
-    editorFlags: 7
+    editorFlags: 1
     activeStateName: 
     mouseEvents: 0
     handleLevelLoaded: 0
