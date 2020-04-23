@@ -5,12 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - LockedDoor1
-  - LockedDoor2
-  - LockedDoor3
-  - LockedDoor4
-  - LockedDoor5
   - LockedBox1
   - Key1
+  - Wrench
   layers:
   - Default
   - TransparentFX

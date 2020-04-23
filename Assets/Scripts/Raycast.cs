@@ -34,6 +34,12 @@ public class Raycast : MonoBehaviour
                 IInventoryItem item = hitGameobject.GetComponent<IInventoryItem>();
                 inventory.AddItem(item);
             }
+
+            if (hitGameobject.name == "Wrench" && Input.GetKeyDown(KeyCode.E))
+            {
+                IInventoryItem item = hitGameobject.GetComponent<IInventoryItem>();
+                inventory.AddItem(item);
+            }
         }
     }
 }

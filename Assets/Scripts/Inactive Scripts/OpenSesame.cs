@@ -16,7 +16,7 @@ public class OpenSesame : MonoBehaviour
         if (collision.gameObject.tag == "LockedDoor1" && keyScript.GotKey > 0 && Input.GetKeyDown(KeyCode.E))
         {
             Destroy(collision.gameObject);
-            Debug.Log("Pretend The Door Was Opened And Not Destroyed");
+            Debug.Log("Pretend The Door Was Opened And Not Destroyed Cuz We Havn't Added An Animation");
         }
 
         if (collision.gameObject.tag == "LockedDoor1" && keyScript.GotKey < 1)
