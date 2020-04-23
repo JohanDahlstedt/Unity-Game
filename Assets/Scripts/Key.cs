@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Key : MonoBehaviour, IInventoryItem
 {
+
+    public int GotKey = 0;
+
     public string Name
     {
         get
@@ -25,5 +28,6 @@ public class Key : MonoBehaviour, IInventoryItem
     public void OnPickup()
     {
         gameObject.SetActive(false);
+        GotKey = 1;
     }
 }

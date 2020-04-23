@@ -28,7 +28,6 @@ public class Raycast : MonoBehaviour
         {
             GameObject hitGameobject = interactionRayHit.transform.gameObject;
             string hitFeedback = hitGameobject.name;
-            Debug.Log(hitFeedback);
 
             if (hitGameobject.name == "Key1" && Input.GetKeyDown(KeyCode.E))
             {
