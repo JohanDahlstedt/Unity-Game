@@ -19,7 +19,7 @@ public class HUD : MonoBehaviour
         {
             Image image = slot.GetChild(0).GetChild(0).GetComponent<Image>();
 
-            if (image.enabled)
+            if (!image.enabled)
             {
                 image.enabled = true;
                 image.sprite = e.Item.Image;
