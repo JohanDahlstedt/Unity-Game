@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - LockedDoor1
+  - LockedBox1
+  - Key1
+  - Wrench
   layers:
   - Default
   - TransparentFX
