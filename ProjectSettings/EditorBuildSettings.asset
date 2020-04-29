@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Oskars stuff/Oskar's lab.unity
-    guid: 0b50103548e370845bdcc3997508ffaa
-  - enabled: 1
     path: Assets/Oskars stuff/Oskar's menu.unity
     guid: 67691cf336af23344a945948cb838013
+  - enabled: 1
+    path: Assets/Scenes/Demo April 28.unity
+    guid: d809a8dc7cae9a541888ff795434f1e9
+  - enabled: 0
+    path: Assets/Oskars stuff/Oskar's lab.unity
+    guid: 0b50103548e370845bdcc3997508ffaa
   m_configObjects: {}
