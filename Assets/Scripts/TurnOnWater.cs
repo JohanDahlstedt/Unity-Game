@@ -9,6 +9,9 @@ public class TurnOnWater : MonoBehaviour
     private bool coroutineAllowed;
 
     public int WaterOn = 0;
+    public AudioSource WaterFlow;
+    public AudioSource WaterHammer;
+    public AudioSource WrenchSqueak;
 
     void Start()
     {
@@ -19,7 +22,15 @@ public class TurnOnWater : MonoBehaviour
     {
         if (coroutineAllowed && wrenchScript.GotWrench > 0)
         {
+            if (WaterOn == 0)
+            {
+                 WaterFlow.Play();
+                 WrenchSqueak.Play();
+                 WaterHammer.Play();
+            }
+            
             StartCoroutine("FixSink");
+            
         }
 
         if (coroutineAllowed && wrenchScript.GotWrench == 0)
@@ -35,7 +46,7 @@ public class TurnOnWater : MonoBehaviour
         WaterOn = 1;
 
         Debug.Log("Water Is Now Turned On");
-
+       
         transform.Rotate(0f, 60f, 0f);
         yield return new WaitForSeconds(0.01f);
 
