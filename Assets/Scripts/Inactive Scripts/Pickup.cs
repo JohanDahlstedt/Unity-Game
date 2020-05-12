@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-    /*public Transform theDest;
+    public Transform theDest;
     bool carrying;
     GameObject mainCamera;
 
@@ -15,7 +15,7 @@ public class Pickup : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             int x = Screen.width / 2;
             int y = Screen.height / 2;
@@ -49,8 +49,8 @@ public class Pickup : MonoBehaviour
     void dropObject()
     {
         this.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-        GetComponent<Rigidbody>().useGravity = true;
-        GetComponent<BoxCollider>().enabled = true;
+        this.GetComponent<Rigidbody>().useGravity = true;
+        this.GetComponent<BoxCollider>().enabled = true;
         this.gameObject.transform.parent = null;
-    }*/
+    }
 }
