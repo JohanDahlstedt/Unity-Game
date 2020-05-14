@@ -9,6 +9,9 @@ TagManager:
   - Key1
   - Wrench
   - Water1
+  - Puzzle
+  - Holding
+  - Slot
   layers:
   - Default
   - TransparentFX
