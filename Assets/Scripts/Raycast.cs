@@ -31,8 +31,14 @@ public class Raycast : MonoBehaviour
     bool carrying;
     bool carryingPuzzle;
 
+    public int puzzleCheck;
+
     GameObject holding;
-    public GameObject letter;
+    GameObject lettershow;
+
+    public GameObject letter1;
+    public GameObject letter2;
+    public GameObject letter3;
 
     public float interactionRayLength = 10.0f;
 
@@ -40,25 +46,41 @@ public class Raycast : MonoBehaviour
     {
         InteractRayCast();
 
-        if (Input.GetKeyDown(KeyCode.L) && !carrying && !carryingPuzzle)
+        if (Input.GetKeyDown(KeyCode.L) && !carrying && !carryingPuzzle && puzzleCheck == 0)
         {
-            letter.gameObject.transform.position = theDestination.position;
-            letter.gameObject.transform.rotation = theDestination.rotation;
-            letter.gameObject.transform.Rotate(0f, 90f, 90f);
-            letter.gameObject.transform.parent = GameObject.Find("Destination").transform;
-            letter.gameObject.GetComponent<Rigidbody>().useGravity = false;
-            letter.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            letter1.gameObject.transform.gameObject.tag = "LetterShow";
+            letter1.gameObject.transform.position = theDestination.position;
+            letter1.gameObject.transform.rotation = theDestination.rotation;
+            letter1.gameObject.transform.Rotate(0f, 90f, 90f);
+            letter1.gameObject.transform.parent = GameObject.Find("Destination").transform;
+            letter1.gameObject.GetComponent<Rigidbody>().useGravity = false;
+            letter1.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            lettershow = GameObject.FindWithTag("LetterShow");
+            StartCoroutine(waitswitch1());
+        }
+
+        if (Input.GetKeyDown(KeyCode.L) && !carrying && !carryingPuzzle && puzzleCheck == 1)
+        {
+            letter1.gameObject.transform.gameObject.tag = "LetterShow";
+            letter2.gameObject.transform.position = theDestination.position;
+            letter2.gameObject.transform.rotation = theDestination.rotation;
+            letter2.gameObject.transform.Rotate(0f, 90f, 90f);
+            letter2.gameObject.transform.parent = GameObject.Find("Destination").transform;
+            letter2.gameObject.GetComponent<Rigidbody>().useGravity = false;
+            letter2.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            lettershow = GameObject.FindWithTag("LetterShow");
             StartCoroutine(waitswitch1());
         }
 
         if (Input.GetKeyDown(KeyCode.L) && carrying)
         {
-            letter.gameObject.transform.position = letterpos.position;
-            letter.gameObject.transform.rotation = letterpos.rotation;
-            letter.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-            letter.GetComponent<Rigidbody>().useGravity = true;
-            letter.GetComponent<BoxCollider>().enabled = true;
-            letter.gameObject.transform.parent = null;
+            lettershow.gameObject.transform.position = letterpos.position;
+            lettershow.gameObject.transform.rotation = letterpos.rotation;
+            lettershow.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            lettershow.GetComponent<Rigidbody>().useGravity = true;
+            lettershow.GetComponent<BoxCollider>().enabled = true;
+            lettershow.gameObject.transform.parent = null;
+            lettershow.gameObject.transform.gameObject.tag = "LetterHide";
             StartCoroutine(waitswitch2());
         }
     }

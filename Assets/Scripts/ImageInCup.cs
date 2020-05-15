@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ImageInCup : MonoBehaviour
 {
+    public Raycast letterScript;
     public Material start;
     public Material end;
     float duration = 2.0f;
@@ -29,5 +30,6 @@ public class ImageInCup : MonoBehaviour
         yield return new WaitForSeconds(3);
         float lerp = Mathf.PingPong(Time.time, duration) / duration;
         rend.material.Lerp(start, end, lerp);
+        letterScript.puzzleCheck = 1;
     }
 }
