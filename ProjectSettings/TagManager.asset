@@ -12,6 +12,8 @@ TagManager:
   - Puzzle
   - Holding
   - Slot
+  - LetterShow
+  - LetterHide
   layers:
   - Default
   - TransparentFX

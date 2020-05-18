@@ -40,6 +40,5 @@ public class RepairSink : MonoBehaviour
         waterScript.WaterRise = 1;
 
         coroutineAllowed = true;
-
     }
 }
