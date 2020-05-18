@@ -25081,9 +25081,10 @@ MonoBehaviour:
   start8: {fileID: 0}
   start9: {fileID: 0}
   letterpos: {fileID: 0}
-  LetterOpen: {fileID: 0}
-  LetterClose: {fileID: 0}
-  letter: {fileID: 0}
+  puzzleCheck: 0
+  letter1: {fileID: 0}
+  letter2: {fileID: 0}
+  letter3: {fileID: 0}
   interactionRayLength: 10
 --- !u!1001 &964516644
 PrefabInstance:
@@ -31669,7 +31670,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 0.4864865
+          value: 0.5135135
         - useVariable: 1
           name: 
           tooltip: 
@@ -39304,6 +39305,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1491810344}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1493566425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1493566426}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1493566426
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493566425}
+  m_LocalRotation: {x: 0.11379319, y: -0.69757485, z: 0.70263153, w: 0.082154386}
+  m_LocalPosition: {x: 27.597, y: 3.029, z: -0.823}
+  m_LocalScale: {x: 1.0382999, y: 1.0383, z: 1.0382999}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1494407798
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49680,7 +49711,7 @@ Transform:
   m_LocalScale: {x: 1.0383, y: 1.0383, z: 1.0383}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 87.40401, y: 88.886, z: 252.953}
 --- !u!1001 &1964596972
 PrefabInstance:
