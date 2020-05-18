@@ -9,6 +9,7 @@ public class LockControl : MonoBehaviour
     public int third;
     public int CheckIfOpened = 0;
     public AudioSource Open;
+    public AudioSource OpenCreak;
     private int[] result, correctCombination;
    
 
@@ -51,6 +52,7 @@ public class LockControl : MonoBehaviour
 
             GameObject.FindWithTag("LockedBox1").transform.Rotate(0, 0, 90);
             Open.Play();
+            OpenCreak.Play();
             CheckIfOpened = 1;
 
             key.SetActive(true);

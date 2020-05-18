@@ -28,6 +28,9 @@ public class Raycast : MonoBehaviour
 
     public Transform letterpos;
 
+    public AudioSource LetterOpen;
+    public AudioSource LetterClose;
+
     bool carrying;
     bool carryingPuzzle;
 
@@ -42,6 +45,7 @@ public class Raycast : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.L) && !carrying && !carryingPuzzle)
         {
+            
             letter.gameObject.transform.position = theDestination.position;
             letter.gameObject.transform.rotation = theDestination.rotation;
             letter.gameObject.transform.Rotate(0f, 90f, 90f);
@@ -49,10 +53,12 @@ public class Raycast : MonoBehaviour
             letter.gameObject.GetComponent<Rigidbody>().useGravity = false;
             letter.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             StartCoroutine(waitswitch1());
+            LetterOpen.Play();
         }
 
         if (Input.GetKeyDown(KeyCode.L) && carrying)
-        {
+        {   
+
             letter.gameObject.transform.position = letterpos.position;
             letter.gameObject.transform.rotation = letterpos.rotation;
             letter.gameObject.GetComponent<Rigidbody>().isKinematic = false;
@@ -60,6 +66,7 @@ public class Raycast : MonoBehaviour
             letter.GetComponent<BoxCollider>().enabled = true;
             letter.gameObject.transform.parent = null;
             StartCoroutine(waitswitch2());
+            LetterClose.Play();
         }
     }
 
