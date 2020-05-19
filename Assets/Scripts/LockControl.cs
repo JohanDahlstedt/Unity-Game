@@ -11,15 +11,11 @@ public class LockControl : MonoBehaviour
 
     private int[] result, correctCombination;
    
-
     public GameObject key;
 
     private void Start()
    
     {
-
-       
-
         result = new int[] { 6, 6, 6 };
         correctCombination = new int[] { first, second, third };
 
@@ -47,9 +43,7 @@ public class LockControl : MonoBehaviour
         if (result[0] == correctCombination[0] && result[1] == correctCombination[1] && result[2] == correctCombination[2] && CheckIfOpened == 0)
         {
 
-            GameObject.FindWithTag("LockedBox1").transform.position = new Vector3(-19.93f, 2.49f, -1.23f);
-
-            GameObject.FindWithTag("LockedBox1").transform.Rotate(0, 0, 90);
+            GameObject.FindWithTag("LockedBox1").GetComponent<Animator>().enabled = true;
             CheckIfOpened = 1;
 
             key.SetActive(true);
