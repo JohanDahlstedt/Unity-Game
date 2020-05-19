@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 69462c7e6622acd42b8284dc82ea1345
+guid: 507caa1559fde5f4cb407b15f1b4d449
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
-      74: 7118053101115055034
-    second: Opening
+      74: -1381142920240213229
+    second: Open_door
   externalObjects: {}
   materials:
     materialImportMode: 1

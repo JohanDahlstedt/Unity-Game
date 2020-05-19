@@ -44,15 +44,8 @@ public class LockControl : MonoBehaviour
         if (result[0] == correctCombination[0] && result[1] == correctCombination[1] && result[2] == correctCombination[2] && CheckIfOpened == 0)
         {
 
-<<<<<<< HEAD
-            GameObject.FindWithTag("LockedBox1").transform.position = new Vector3(-19.93f, 2.49f, -1.23f);
-
-            GameObject.FindWithTag("LockedBox1").transform.Rotate(0, 0, 90);
-            Open.Play();
-            OpenCreak.Play();
-=======
             GameObject.FindWithTag("LockedBox1").GetComponent<Animator>().enabled = true;
->>>>>>> JohansBranch
+
             CheckIfOpened = 1;
 
             key.SetActive(true);
