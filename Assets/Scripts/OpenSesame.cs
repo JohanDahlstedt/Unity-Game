@@ -7,7 +7,10 @@ public class OpenSesame : MonoBehaviour
     public Key keyScript;
     public Collider DoorClosedColl;
     public Collider DoorOpenColl;
-
+    public AudioSource DoorOpenCreak;
+    public float Delay;
+    public AudioSource DoorOpenClick;
+    
     void OnTriggerStay(Collider collision)
     {
         if (collision.gameObject.tag == "Player" && keyScript.GotKey > 0)
@@ -20,7 +23,9 @@ public class OpenSesame : MonoBehaviour
             GetComponent<Animator>().enabled = true;
             DoorClosedColl.enabled = false;
             DoorOpenColl.enabled = true;
-            Debug.Log("Pretend The Door Was Opened And Not Destroyed Cuz We Havn't Added An Animation");
+            DoorOpenCreak.PlayDelayed(Delay);
+            DoorOpenClick.Play();
+            Debug.Log("Door Opened");
         }
 
         if (collision.gameObject.tag == "Player" && keyScript.GotKey < 1)

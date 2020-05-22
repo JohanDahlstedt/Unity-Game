@@ -49,6 +49,8 @@ public class LockControl : MonoBehaviour
             CheckIfOpened = 1;
 
             key.SetActive(true);
+            Open.Play();
+            OpenCreak.Play();
 
         }
     }

@@ -1694,8 +1694,8 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.UiTextSetText
         customNames:
         - 
-        actionEnabled: 00
-        actionIsOpen: 00
+        actionEnabled: 01
+        actionIsOpen: 01
         actionStartIndex: 00000000
         actionHashCodes: 09fbab04
         unityObjectParams: []
@@ -1721,7 +1721,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: Johan is a sock
+          value: Not yet :(
         fsmObjectParams: []
         fsmVarParams: []
         fsmArrayParams: []
