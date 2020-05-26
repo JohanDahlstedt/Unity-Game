@@ -42,6 +42,8 @@ public class Raycast : MonoBehaviour
     public int check8 = 0;
     public int check9 = 0;
 
+    public int winCheck = 0;
+
     public Transform letterpos;
 
     bool carrying;
@@ -105,15 +107,7 @@ public class Raycast : MonoBehaviour
         //Show Letter 3
         if (Input.GetKeyDown(KeyCode.L) && !carrying && !carryingPuzzle && !carryingCup && puzzleCheck == 2)
         {
-            letter3.gameObject.transform.gameObject.tag = "LetterShow";
-            letter3.gameObject.transform.position = theDestination.position;
-            letter3.gameObject.transform.rotation = theDestination.rotation;
-            letter3.gameObject.transform.Rotate(0f, 90f, 90f);
-            letter3.gameObject.transform.parent = GameObject.Find("Destination").transform;
-            letter3.gameObject.GetComponent<Rigidbody>().useGravity = false;
-            letter3.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            lettershow = GameObject.FindWithTag("LetterShow");
-            StartCoroutine(waitswitch1());
+            winCheck = 1;
         }
 
         //Hide Letter
