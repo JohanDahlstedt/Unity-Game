@@ -15,9 +15,9 @@ public class Rotate : MonoBehaviour
         numberShown = 1;
     }
 
-    private void OnMouseDown()
+    private void OnMouseOver()
     {
-        if (coroutineAllowed)
+        if (coroutineAllowed && Input.GetKeyDown(KeyCode.E))
         {
             StartCoroutine("RotateWheel");
         }
