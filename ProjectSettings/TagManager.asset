@@ -3,7 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - LetterHide
+  - Slot
+  - Puzzle
+  - LockedDoor1
+  - LockedBox1
+  - Water1
+  - Key1
+  - Cup
+  - Sink
+  - LetterShow
+  - Holding
+  - Wrench
   layers:
   - Default
   - TransparentFX

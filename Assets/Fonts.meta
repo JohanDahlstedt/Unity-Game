@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 23e635f54b08e7f47b29af9e67bf351c
+<<<<<<< HEAD:Assets/Fonts.meta
+guid: 298f001993c0df04dbb262e62111f584
+=======
+guid: b08e5472af8597f4bbb58c9cffc90513
+>>>>>>> JohansBranch:Assets/PlayMaker/Versions.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

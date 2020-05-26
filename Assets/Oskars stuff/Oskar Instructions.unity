@@ -1136,8 +1136,11 @@ MonoBehaviour:
     B - Open and Close Inventory
 
 
-    ESC in game
-    - Quit
+    L - Check Letter
+
+
+    ESC
+    in game - Quit
 
 
     Items are used automatically'
