@@ -18,7 +18,7 @@ public class Rotate : MonoBehaviour
 
     private void OnMouseDown()
     {
-        //Click.Play();
+        Click.Play();
         if (coroutineAllowed)
         {
             
