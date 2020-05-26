@@ -1,32 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OpenInventory : MonoBehaviour
 {
-    public bool mFaded = false;
-    public float Duration = 0.4f;
+    public Image blackFade;
+    public Image letterFade;
+    public Raycast winning;
+    bool startOtherFade;
+
+    void Start()
+    {
+        blackFade.canvasRenderer.SetAlpha(0.0f);
+        letterFade.canvasRenderer.SetAlpha(0.0f);
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (winning.winCheck == 1)
         {
-            var canvGroup = GetComponent<CanvasGroup>();
+            StartCoroutine(fadeInLetter());
+        }
 
-            StartCoroutine(DoFade(canvGroup, canvGroup.alpha, mFaded ? 1 : 0));
-            mFaded = !mFaded;
+        if (startOtherFade)
+        {
+            StartCoroutine(fadeInBlack());
         }
     }
 
-    public IEnumerator DoFade(CanvasGroup canvGroup, float start, float end)
+    IEnumerator fadeInLetter()
     {
-        float counter = 0f;
+        letterFade.CrossFadeAlpha(1, 0.5f, false);
+        yield return new WaitForSeconds(1.5f);
+        startOtherFade = true;
+    }
 
-        while (counter < Duration)
-        {
-            counter += Time.deltaTime;
-            canvGroup.alpha = Mathf.Lerp(start, end, counter / Duration);
-            yield return null;
-        }
+    IEnumerator fadeInBlack()
+    {
+        blackFade.CrossFadeAlpha(1, 2, false);
+        yield return null;
     }
 }

@@ -8,7 +8,6 @@ public class Rotate : MonoBehaviour
     public static event Action<string, int> Rotated = delegate { };
     private bool coroutineAllowed;
     private int numberShown;
-    public AudioSource Click;
 
     void Start()
     {
@@ -16,12 +15,10 @@ public class Rotate : MonoBehaviour
         numberShown = 1;
     }
 
-    private void OnMouseDown()
+    private void OnMouseOver()
     {
-        Click.Play();
-        if (coroutineAllowed)
+        if (coroutineAllowed && Input.GetKeyDown(KeyCode.E))
         {
-            
             StartCoroutine("RotateWheel");
         }
     }
@@ -33,7 +30,6 @@ public class Rotate : MonoBehaviour
         for (int i = 0; i <= 11; i++)
         {
             transform.Rotate(0f, 3f, 0f);
-            
             yield return new WaitForSeconds(0.01f);
         }
 

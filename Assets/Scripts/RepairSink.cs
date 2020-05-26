@@ -17,9 +17,9 @@ public class RepairSink : MonoBehaviour
         coroutineAllowed = true;
     }
 
-    private void OnMouseDown()
+    private void OnMouseOver()
     {
-        if (coroutineAllowed && Water.WaterOn > 0)
+        if (Input.GetKeyDown(KeyCode.E) && coroutineAllowed && Water.WaterOn > 0)
         {
             StartCoroutine("FixSink");
         }

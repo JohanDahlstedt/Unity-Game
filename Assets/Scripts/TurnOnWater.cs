@@ -18,9 +18,9 @@ public class TurnOnWater : MonoBehaviour
         coroutineAllowed = true;
     }
 
-    private void OnMouseDown()
+    private void OnMouseOver()
     {
-        if (coroutineAllowed && wrenchScript.GotWrench > 0)
+        if (Input.GetKeyDown(KeyCode.E) && coroutineAllowed && wrenchScript.GotWrench > 0)
         {
             if (WaterOn == 0)
             {
