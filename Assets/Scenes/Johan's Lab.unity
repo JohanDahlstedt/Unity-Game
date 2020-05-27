@@ -2996,6 +2996,36 @@ Transform:
   m_Father: {fileID: 830529441}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &669477829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 669477835}
+  m_Layer: 2
+  m_Name: puzzlePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &669477835
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669477829}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: -17.874, y: 1.88, z: -6.631}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3512,6 +3542,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wheel3
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 46bf75064ca03ab4398434e92d631010,
+        type: 3}
+      propertyPath: m_TagString
+      value: Code
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46bf75064ca03ab4398434e92d631010, type: 3}
 --- !u!1 &765916700 stripped
@@ -3763,7 +3798,7 @@ GameObject:
   - component: {fileID: 904394966}
   m_Layer: 0
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: Code
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4336,6 +4371,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wheel1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 46bf75064ca03ab4398434e92d631010,
+        type: 3}
+      propertyPath: m_TagString
+      value: Code
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46bf75064ca03ab4398434e92d631010, type: 3}
 --- !u!1 &949861574 stripped
@@ -4581,7 +4621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 971182711}
   theDestination: {fileID: 2141250106}
-  speed: 1000
+  speed: 0
   slot1: {fileID: 443293620}
   slot2: {fileID: 950886115}
   slot3: {fileID: 564652111}
@@ -4601,6 +4641,7 @@ MonoBehaviour:
   start8: {fileID: 908685977}
   start9: {fileID: 485462741}
   cupEnd1: {fileID: 2125950439}
+  puzzlePos: {fileID: 669477835}
   check1: 0
   check2: 0
   check3: 0
@@ -6186,7 +6227,6 @@ GameObject:
   - component: {fileID: 1375528528}
   - component: {fileID: 1375528530}
   - component: {fileID: 1375528531}
-  - component: {fileID: 1375528532}
   - component: {fileID: 1375528534}
   m_Layer: 2
   m_Name: First Person Player
@@ -6256,19 +6296,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyScript: {fileID: 240448828}
---- !u!114 &1375528532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1375528527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8628286ea96359e4ea38e573d1c5cde6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  theDest: {fileID: 2141250106}
 --- !u!65 &1375528534
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6789,6 +6816,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wheel2
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 46bf75064ca03ab4398434e92d631010,
+        type: 3}
+      propertyPath: m_TagString
+      value: Code
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46bf75064ca03ab4398434e92d631010, type: 3}

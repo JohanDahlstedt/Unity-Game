@@ -32,6 +32,8 @@ public class Raycast : MonoBehaviour
 
     public Transform cupEnd1;
 
+    public Transform puzzlePos;
+
     public int check1 = 0;
     public int check2 = 0;
     public int check3 = 0;
@@ -189,17 +191,14 @@ public class Raycast : MonoBehaviour
             }
 
             //Move Closer to puzzle
-            /*if (hitGameobject.name == "Code" && Input.GetKeyDown(KeyCode.E))
-            {
-                float step = speed * Time.deltaTime;                
+            if (hitGameobject.tag == "Code" && Input.GetKeyDown(KeyCode.E))
+            {         
                 transform.parent = null;
-                transform.parent = GameObject.Find("PuzzlePos1").transform;
-                transform.position = Vector3.MoveTowards(transform.position, puzzleOneCamPos.position, step);
-
-            }*/
+                transform.parent = GameObject.Find("puzzlePos").transform;
+                transform.position = puzzlePos.position;
+            }
 
             //Pickup Objects
-
             if (hitGameobject.tag == "Puzzle" && Input.GetKeyDown(KeyCode.E) && !carrying && !carryingPuzzle && !carryingCup)
             {
                 hitGameobject.gameObject.transform.position = theDestination.position;
