@@ -7,7 +7,7 @@ public class RepairSink : MonoBehaviour
 
     public GameObject fakewater;
     public TurnOnWater Water;
-
+    public GameObject WaterFlowPrcl;
     public WaterAwake waterScript;
 
     private bool coroutineAllowed;
@@ -33,12 +33,13 @@ public class RepairSink : MonoBehaviour
     private IEnumerator FixSink()
     {
         coroutineAllowed = false;
-
-        transform.Rotate(0f, 0f, 30f);
+        
+        transform.Rotate(0f, 0f, 0f);
         yield return new WaitForSeconds(0.01f);
-
+        WaterFlowPrcl.SetActive(true);
         waterScript.WaterRise = 1;
 
         coroutineAllowed = true;
+        
     }
 }

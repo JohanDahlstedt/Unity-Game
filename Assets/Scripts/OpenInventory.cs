@@ -39,7 +39,7 @@ public class OpenInventory : MonoBehaviour
     IEnumerator fadeInBlack()
     {
         Debug.Log("blackfade should start");
-        blackFade.CrossFadeAlpha(1, 2f, false);
+        blackFade.CrossFadeAlpha(1, 2, false);
         yield return null;
     }
 }
