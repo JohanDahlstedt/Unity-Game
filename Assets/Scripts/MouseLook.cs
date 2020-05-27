@@ -9,6 +9,8 @@ public class MouseLook : MonoBehaviour
 
     public Transform playerBody;
 
+    public int normalPos = 1;
+
     float xRotation = 0f;
     float yRotation = 0f;
 
@@ -29,5 +31,9 @@ public class MouseLook : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
 
+        while (normalPos == 1)
+        {
+            transform.position = new Vector3(transform.position.x, 3f, transform.position.z);
+        }
     }
 }
