@@ -3020,7 +3020,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 669477829}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -17.874, y: 1.88, z: -6.631}
+  m_LocalPosition: {x: -17.42, y: 1.88, z: -6.631}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4607,6 +4607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
   playerBody: {fileID: 963194228}
+  normalPos: 1
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4642,6 +4643,7 @@ MonoBehaviour:
   start9: {fileID: 485462741}
   cupEnd1: {fileID: 2125950439}
   puzzlePos: {fileID: 669477835}
+  FirstPersonPlayer: {fileID: 1375528529}
   check1: 0
   check2: 0
   check3: 0
@@ -4659,6 +4661,8 @@ MonoBehaviour:
   letter3: {fileID: 1426638124}
   inventoryLetter: {fileID: 2015353495}
   interactionRayLength: 10
+  yPos: {fileID: 963194229}
+  iAmSpeed: {fileID: 1375528530}
 --- !u!136 &963194231
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6283,6 +6287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1375528528}
   speed: 6
+  camera_transform: {fileID: 963194228}
 --- !u!114 &1375528531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6327,7 +6332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1426103368
 Transform:
   m_ObjectHideFlags: 0

@@ -33,6 +33,7 @@ public class Raycast : MonoBehaviour
     public Transform cupEnd1;
 
     public Transform puzzlePos;
+    public Transform FirstPersonPlayer;
 
     public int check1 = 0;
     public int check2 = 0;
@@ -52,6 +53,8 @@ public class Raycast : MonoBehaviour
     bool carryingPuzzle;
     bool carryingCup;
 
+    bool stopZoom;
+
     public int puzzleCheck;
 
     GameObject holding;
@@ -64,6 +67,9 @@ public class Raycast : MonoBehaviour
     public GameObject inventoryLetter;
 
     public float interactionRayLength = 10.0f;
+
+    public MouseLook yPos;
+    public PlayerMovement iAmSpeed;
 
     void Start()
     {
@@ -196,6 +202,18 @@ public class Raycast : MonoBehaviour
                 transform.parent = null;
                 transform.parent = GameObject.Find("puzzlePos").transform;
                 transform.position = puzzlePos.position;
+                yPos.normalPos = 2;
+                iAmSpeed.speed = 0;
+                StartCoroutine(waitswitch7());
+            }
+
+            if (stopZoom && Input.GetKeyDown(KeyCode.Q))
+            {
+                transform.parent = null;
+                transform.parent = GameObject.Find("First Person Player").transform;
+                transform.position = FirstPersonPlayer.position;
+                iAmSpeed.speed = 6;
+                yPos.normalPos = 1;
             }
 
             //Pickup Objects
@@ -484,6 +502,11 @@ public class Raycast : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         carryingCup = false;
+    }
+    IEnumerator waitswitch7()
+    {
+        yield return new WaitForSeconds(0.2f);
+        stopZoom = true;
     }
     IEnumerator AddToInv()
     {
