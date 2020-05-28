@@ -8,6 +8,7 @@ public class Rotate : MonoBehaviour
     public static event Action<string, int> Rotated = delegate { };
     private bool coroutineAllowed;
     private int numberShown;
+    public Raycast rotationAllowed;
 
     void Start()
     {
@@ -17,7 +18,7 @@ public class Rotate : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (coroutineAllowed && Input.GetKeyDown(KeyCode.E))
+        if (coroutineAllowed && rotationAllowed.allowedRotate && Input.GetKeyDown(KeyCode.E))
         {
             StartCoroutine("RotateWheel");
         }

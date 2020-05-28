@@ -54,8 +54,10 @@ public class Raycast : MonoBehaviour
     bool carryingCup;
 
     bool stopZoom;
+    public bool allowedRotate;
 
-    public int puzzleCheck;
+    public bool puzzleCheck1;
+    public bool puzzleCheck2;
 
     GameObject holding;
     GameObject lettershow;
@@ -82,16 +84,16 @@ public class Raycast : MonoBehaviour
         
         if (check1 == 1 && check2 == 1 && check3 == 1 && check4 == 1 && check5 == 1 && check6 == 1 && check7 == 1 && check8 == 1 && check9 == 1)
         {
-            puzzleCheck = 2;
+            puzzleCheck2 = true;
         }
 
         //Show Letter 1
-        if (Input.GetKeyDown(KeyCode.L) && !carrying && !carryingPuzzle && !carryingCup && puzzleCheck == 0)
+        if (Input.GetKeyDown(KeyCode.L) && !carrying && !carryingPuzzle && !carryingCup && !puzzleCheck1 && !puzzleCheck2)
         {
             letter1.gameObject.transform.gameObject.tag = "LetterShow";
             letter1.gameObject.transform.position = theDestination.position;
             letter1.gameObject.transform.rotation = theDestination.rotation;
-            letter1.gameObject.transform.Rotate(0f, 90f, 90f);
+            letter1.gameObject.transform.Rotate(90f, 90f, 90f);
             letter1.gameObject.transform.parent = GameObject.Find("Destination").transform;
             letter1.gameObject.GetComponent<Rigidbody>().useGravity = false;
             letter1.gameObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -99,12 +101,12 @@ public class Raycast : MonoBehaviour
             StartCoroutine(waitswitch1());
         }
         //Show Letter 2
-        if (Input.GetKeyDown(KeyCode.L) && !carrying && !carryingPuzzle && !carryingCup && puzzleCheck == 1)
+        if (Input.GetKeyDown(KeyCode.L) && !carrying && !carryingPuzzle && !carryingCup && puzzleCheck1 && !puzzleCheck2)
         {
             letter2.gameObject.transform.gameObject.tag = "LetterShow";
             letter2.gameObject.transform.position = theDestination.position;
             letter2.gameObject.transform.rotation = theDestination.rotation;
-            letter2.gameObject.transform.Rotate(0f, 90f, 90f);
+            letter2.gameObject.transform.Rotate(90f, 90f, 90f);
             letter2.gameObject.transform.parent = GameObject.Find("Destination").transform;
             letter2.gameObject.GetComponent<Rigidbody>().useGravity = false;
             letter2.gameObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -113,7 +115,21 @@ public class Raycast : MonoBehaviour
         }
 
         //Show Letter 3
-        if (Input.GetKeyDown(KeyCode.L) && !carrying && !carryingPuzzle && !carryingCup && puzzleCheck == 2)
+        if (Input.GetKeyDown(KeyCode.L) && !carrying && !carryingPuzzle && !carryingCup && !puzzleCheck1 && puzzleCheck2)
+        {
+            letter3.gameObject.transform.gameObject.tag = "LetterShow";
+            letter3.gameObject.transform.position = theDestination.position;
+            letter3.gameObject.transform.rotation = theDestination.rotation;
+            letter3.gameObject.transform.Rotate(90f, 90f, 90f);
+            letter3.gameObject.transform.parent = GameObject.Find("Destination").transform;
+            letter3.gameObject.GetComponent<Rigidbody>().useGravity = false;
+            letter3.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            lettershow = GameObject.FindWithTag("LetterShow");
+            StartCoroutine(waitswitch1());
+        }
+
+        //Show after all Puzzles are done
+        if (Input.GetKeyDown(KeyCode.L) && !carrying && !carryingPuzzle && !carryingCup && puzzleCheck1 && puzzleCheck2)
         {
             winCheck = 1;
         }
@@ -204,6 +220,7 @@ public class Raycast : MonoBehaviour
                 transform.position = puzzlePos.position;
                 yPos.normalPos = 2;
                 iAmSpeed.speed = 0;
+                allowedRotate = true;
                 StartCoroutine(waitswitch7());
             }
 
@@ -214,6 +231,7 @@ public class Raycast : MonoBehaviour
                 transform.position = FirstPersonPlayer.position;
                 iAmSpeed.speed = 6;
                 yPos.normalPos = 1;
+                allowedRotate = false;
             }
 
             //Pickup Objects
