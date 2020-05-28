@@ -11,7 +11,7 @@ public class MouseLook : MonoBehaviour
     public int normalPos = 1;
     float xRotation = 0f;
     float yRotation = 0f;
-
+    
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -31,11 +31,11 @@ public class MouseLook : MonoBehaviour
 
         if (normalPos == 1)
         {
-            transform.position = new Vector3(transform.position.x, 3.5f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, 2f, transform.position.z);
         }
         if (normalPos == 2)
         {
-            transform.position = new Vector3(transform.position.x, 2f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, 1.3f, transform.position.z);
         }
     }
 }

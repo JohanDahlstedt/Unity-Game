@@ -45,7 +45,7 @@ public class LockControl : MonoBehaviour
         {
 
             GameObject.FindWithTag("LockedBox1").GetComponent<Animator>().enabled = true;
-
+            GameObject.FindWithTag("LockedBox1").GetComponent<BoxCollider>().enabled = false;
             CheckIfOpened = 1;
 
             key.SetActive(true);

@@ -218,7 +218,7 @@ public class Raycast : MonoBehaviour
                 transform.parent = GameObject.Find("puzzlePos").transform;
                 transform.position = puzzlePos.position;
                 yPos.normalPos = 2;
-                iAmSpeed.speed = 0;
+                iAmSpeed.speed = 0f;
                 allowedRotate = true;
                 StartCoroutine(waitswitch7());
             }
@@ -228,7 +228,7 @@ public class Raycast : MonoBehaviour
                 transform.parent = null;
                 transform.parent = GameObject.Find("First Person Player").transform;
                 transform.position = FirstPersonPlayer.position;
-                iAmSpeed.speed = 6;
+                iAmSpeed.speed = 1.6f;
                 yPos.normalPos = 1;
                 allowedRotate = false;
             }

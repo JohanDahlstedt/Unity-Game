@@ -7,6 +7,7 @@ public class Rotate : MonoBehaviour
 {
     public static event Action<string, int> Rotated = delegate { };
     private bool coroutineAllowed;
+    public AudioSource wheelClick;
     private int numberShown;
     public Raycast rotationAllowed;
 
@@ -20,6 +21,7 @@ public class Rotate : MonoBehaviour
     {
         if (coroutineAllowed && rotationAllowed.allowedRotate && Input.GetKeyDown(KeyCode.E))
         {
+            wheelClick.Play();
             StartCoroutine("RotateWheel");
         }
     }
