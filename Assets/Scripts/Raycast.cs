@@ -8,8 +8,6 @@ public class Raycast : MonoBehaviour
     public Inventory inventory;
     public Transform theDestination;
 
-    public float speed;
-
     public Transform slot1;
     public Transform slot2;
     public Transform slot3;
