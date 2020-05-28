@@ -52,6 +52,7 @@ public class Raycast : MonoBehaviour
     bool carryingCup;
 
     bool stopZoom;
+    bool dontLag;
     public bool allowedRotate;
 
     public bool puzzleCheck1;
@@ -151,8 +152,6 @@ public class Raycast : MonoBehaviour
         //collision check on Sink
         if (collision.gameObject.tag == "Sink")
         {
-            Debug.Log("Hello World");
-
             if (Input.GetKeyDown(KeyCode.E) && carryingCup)
             {
                 holding.gameObject.transform.gameObject.tag = "Cup";
@@ -212,14 +211,15 @@ public class Raycast : MonoBehaviour
             }
 
             //Move Closer to puzzle
-            if (hitGameobject.tag == "Code" && Input.GetKeyDown(KeyCode.E))
+            if (!dontLag && hitGameobject.tag == "Code" && Input.GetKeyDown(KeyCode.E))
             {         
                 transform.parent = null;
                 transform.parent = GameObject.Find("puzzlePos").transform;
                 transform.position = puzzlePos.position;
                 yPos.normalPos = 2;
-                iAmSpeed.speed = 0f;
+                iAmSpeed.speed = 0;
                 allowedRotate = true;
+                dontLag = true;
                 StartCoroutine(waitswitch7());
             }
 
@@ -228,9 +228,11 @@ public class Raycast : MonoBehaviour
                 transform.parent = null;
                 transform.parent = GameObject.Find("First Person Player").transform;
                 transform.position = FirstPersonPlayer.position;
-                iAmSpeed.speed = 1.6f;
+                iAmSpeed.speed = 6;
                 yPos.normalPos = 1;
                 allowedRotate = false;
+                dontLag = false;
+                StartCoroutine(waitswitch8());
             }
 
             //Pickup Objects
@@ -524,6 +526,11 @@ public class Raycast : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         stopZoom = true;
+    }
+    IEnumerator waitswitch8()
+    {
+        yield return new WaitForSeconds(0.2f);
+        stopZoom = false;
     }
     IEnumerator AddToInv()
     {
