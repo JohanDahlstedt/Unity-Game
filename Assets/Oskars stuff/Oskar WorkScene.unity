@@ -3229,7 +3229,7 @@ Animator:
   m_GameObject: {fileID: 77150866}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: be98a950b4691144caa50b3b666e7f51, type: 2}
+  m_Controller: {fileID: 9100000, guid: c3ad632521b61f4429fec9b6fd3aad16, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -20578,7 +20578,7 @@ Animator:
   m_GameObject: {fileID: 444767804}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: be98a950b4691144caa50b3b666e7f51, type: 2}
+  m_Controller: {fileID: 9100000, guid: c3ad632521b61f4429fec9b6fd3aad16, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -59373,13 +59373,13 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: -2559087314802682697, guid: c3267c611d0de9342b0cd2bca0514388,
+    - sprite: {fileID: -2559087314802682697, guid: 85ef589e6196e024cab484aeb674023a,
         type: 3}
-    - sprite: {fileID: -9015456616728696025, guid: c3267c611d0de9342b0cd2bca0514388,
+    - sprite: {fileID: -9015456616728696025, guid: 85ef589e6196e024cab484aeb674023a,
         type: 3}
-    - sprite: {fileID: 6513329029009206381, guid: c3267c611d0de9342b0cd2bca0514388,
+    - sprite: {fileID: 6513329029009206381, guid: 85ef589e6196e024cab484aeb674023a,
         type: 3}
-    - sprite: {fileID: -7458913003493145920, guid: c3267c611d0de9342b0cd2bca0514388,
+    - sprite: {fileID: -7458913003493145920, guid: 85ef589e6196e024cab484aeb674023a,
         type: 3}
     flipU: 0
     flipV: 0
