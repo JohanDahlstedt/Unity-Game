@@ -35,7 +35,7 @@ public class MouseLook : MonoBehaviour
         }
         if (normalPos == 2)
         {
-            transform.position = new Vector3(transform.position.x, 1.3f, transform.position.z);
+            transform.position = new Vector3(transform.position.x, 1.33f, transform.position.z);
         }
     }
 }

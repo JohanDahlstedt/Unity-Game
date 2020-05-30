@@ -92,7 +92,7 @@ public class Raycast : MonoBehaviour
             letter1.gameObject.transform.gameObject.tag = "LetterShow";
             letter1.gameObject.transform.position = theDestination.position;
             letter1.gameObject.transform.rotation = theDestination.rotation;
-            letter1.gameObject.transform.Rotate(90f, 90f, 90f);
+            letter1.gameObject.transform.Rotate(0f, 90f, 90f);
             letter1.gameObject.transform.parent = GameObject.Find("Destination").transform;
             letter1.gameObject.GetComponent<Rigidbody>().useGravity = false;
             letter1.gameObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -119,7 +119,7 @@ public class Raycast : MonoBehaviour
             letter3.gameObject.transform.gameObject.tag = "LetterShow";
             letter3.gameObject.transform.position = theDestination.position;
             letter3.gameObject.transform.rotation = theDestination.rotation;
-            letter3.gameObject.transform.Rotate(90f, 90f, 90f);
+            letter3.gameObject.transform.Rotate( 0f, 90f, 90f);
             letter3.gameObject.transform.parent = GameObject.Find("Destination").transform;
             letter3.gameObject.GetComponent<Rigidbody>().useGravity = false;
             letter3.gameObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -228,7 +228,7 @@ public class Raycast : MonoBehaviour
                 transform.parent = null;
                 transform.parent = GameObject.Find("First Person Player").transform;
                 transform.position = FirstPersonPlayer.position;
-                iAmSpeed.speed = 6;
+                iAmSpeed.speed = 1.6f;
                 yPos.normalPos = 1;
                 allowedRotate = false;
                 dontLag = false;
@@ -240,7 +240,7 @@ public class Raycast : MonoBehaviour
             {
                 hitGameobject.gameObject.transform.position = theDestination.position;
                 hitGameobject.gameObject.transform.rotation = theDestination.rotation;
-                hitGameobject.gameObject.transform.Rotate(90f, 180f, 0f);
+                hitGameobject.gameObject.transform.Rotate(0f, 180f, 0f);
                 hitGameobject.gameObject.transform.parent = GameObject.Find("Destination").transform;
                 hitGameobject.gameObject.GetComponent<Rigidbody>().useGravity = false;
                 hitGameobject.gameObject.GetComponent<Rigidbody>().isKinematic = true;

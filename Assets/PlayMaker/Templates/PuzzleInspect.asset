@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1219815696, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
-  m_Name: Inspection
+  m_Name: PuzzleInspect
   m_EditorClassIdentifier: 
   category: General
   fsm:
@@ -24,8 +24,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 100
+        y: 100
         width: 115.6
         height: 32
       isBreakpoint: 0
@@ -231,8 +231,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 190
-        y: 12
+        x: 290
+        y: 112
         width: 103.6
         height: 32
       isBreakpoint: 0
@@ -309,10 +309,10 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 'Momo''s old chair.
+          value: 'Why is this picture torn into pieces?
 
-            It might have clues on the back
-            of it.'
+            [Press E to
+            pick up and place pieces]'
         fsmObjectParams:
         - useVariable: 0
           name: 
@@ -330,7 +330,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 0.5135135
+          value: 0.3918919
         - useVariable: 1
           name: 
           tooltip: 
@@ -505,7 +505,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 1
+    preprocessed: 0
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
