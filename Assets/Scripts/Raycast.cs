@@ -92,7 +92,7 @@ public class Raycast : MonoBehaviour
             letter1.gameObject.transform.gameObject.tag = "LetterShow";
             letter1.gameObject.transform.position = theDestination.position;
             letter1.gameObject.transform.rotation = theDestination.rotation;
-            letter1.gameObject.transform.Rotate(0f, 90f, 90f);
+            letter1.gameObject.transform.Rotate(0f, 0f, 0f);
             letter1.gameObject.transform.parent = GameObject.Find("Destination").transform;
             letter1.gameObject.GetComponent<Rigidbody>().useGravity = false;
             letter1.gameObject.GetComponent<Rigidbody>().isKinematic = true;
