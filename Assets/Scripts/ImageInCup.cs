@@ -5,31 +5,40 @@ using UnityEngine;
 public class ImageInCup : MonoBehaviour
 {
     public Raycast letterScript;
-    public Material start;
-    public Material end;
-    float duration = 2.0f;
+    public Material[] material;
+    public int x;
     Renderer rend;
 
 
     void Start()
     {
+        x = 0;
         rend = GetComponent<Renderer>();
-        rend.material = start;
+        rend.enabled = true;
+        rend.sharedMaterial = material[x];
+    }
+
+    void Update()
+    {
+        rend.sharedMaterial = material[x];
     }
 
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "Water1")
-        {
+        {          
             StartCoroutine("CleanCup");
         }
     }
-
+    
     public IEnumerator CleanCup()
     {
         yield return new WaitForSeconds(3);
-        float lerp = Mathf.PingPong(Time.time, duration) / duration;
-        rend.material.Lerp(start, end, lerp);
-        letterScript.puzzleCheck1 = true;
+        if (x < 1)
+        {
+            x++;
+            letterScript.puzzleCheck1 = true;
+        }
+        
     }
 }
