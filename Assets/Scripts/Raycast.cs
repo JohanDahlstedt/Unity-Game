@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Raycast : MonoBehaviour
 {
@@ -29,6 +30,9 @@ public class Raycast : MonoBehaviour
 
     public Transform cupEnd1;
 
+    public Transform puzzlePos;
+    public Transform FirstPersonPlayer;
+
     public int check1 = 0;
     public int check2 = 0;
     public int check3 = 0;
@@ -39,13 +43,20 @@ public class Raycast : MonoBehaviour
     public int check8 = 0;
     public int check9 = 0;
 
+    public int winCheck = 0;
+
     public Transform letterpos;
 
     bool carrying;
     bool carryingPuzzle;
     bool carryingCup;
 
-    public int puzzleCheck;
+    bool stopZoom;
+    bool dontLag;
+    public bool allowedRotate;
+
+    public bool puzzleCheck1;
+    public bool puzzleCheck2;
 
     GameObject holding;
     GameObject lettershow;
@@ -58,6 +69,9 @@ public class Raycast : MonoBehaviour
 
     public float interactionRayLength = 10.0f;
 
+    public MouseLook yPos;
+    public PlayerMovement iAmSpeed;
+
     void Start()
     {
         StartCoroutine(AddToInv());
@@ -69,11 +83,11 @@ public class Raycast : MonoBehaviour
         
         if (check1 == 1 && check2 == 1 && check3 == 1 && check4 == 1 && check5 == 1 && check6 == 1 && check7 == 1 && check8 == 1 && check9 == 1)
         {
-            puzzleCheck = 2;
+            puzzleCheck2 = true;
         }
 
         //Show Letter 1
-        if (Input.GetKeyDown(KeyCode.L) && !carrying && !carryingPuzzle && !carryingCup && puzzleCheck == 0)
+        if (Input.GetKeyDown(KeyCode.L) && !carrying && !carryingPuzzle && !carryingCup && !puzzleCheck1 && !puzzleCheck2)
         {
             letter1.gameObject.transform.gameObject.tag = "LetterShow";
             letter1.gameObject.transform.position = theDestination.position;
@@ -86,12 +100,12 @@ public class Raycast : MonoBehaviour
             StartCoroutine(waitswitch1());
         }
         //Show Letter 2
-        if (Input.GetKeyDown(KeyCode.L) && !carrying && !carryingPuzzle && !carryingCup && puzzleCheck == 1)
+        if (Input.GetKeyDown(KeyCode.L) && !carrying && !carryingPuzzle && !carryingCup && puzzleCheck1 && !puzzleCheck2)
         {
             letter2.gameObject.transform.gameObject.tag = "LetterShow";
             letter2.gameObject.transform.position = theDestination.position;
             letter2.gameObject.transform.rotation = theDestination.rotation;
-            letter2.gameObject.transform.Rotate(0f, 90f, 90f);
+            letter2.gameObject.transform.Rotate(90f, 90f, 90f);
             letter2.gameObject.transform.parent = GameObject.Find("Destination").transform;
             letter2.gameObject.GetComponent<Rigidbody>().useGravity = false;
             letter2.gameObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -100,17 +114,23 @@ public class Raycast : MonoBehaviour
         }
 
         //Show Letter 3
-        if (Input.GetKeyDown(KeyCode.L) && !carrying && !carryingPuzzle && !carryingCup && puzzleCheck == 2)
+        if (Input.GetKeyDown(KeyCode.L) && !carrying && !carryingPuzzle && !carryingCup && !puzzleCheck1 && puzzleCheck2)
         {
             letter3.gameObject.transform.gameObject.tag = "LetterShow";
             letter3.gameObject.transform.position = theDestination.position;
             letter3.gameObject.transform.rotation = theDestination.rotation;
-            letter3.gameObject.transform.Rotate(0f, 90f, 90f);
+            letter3.gameObject.transform.Rotate( 0f, 90f, 90f);
             letter3.gameObject.transform.parent = GameObject.Find("Destination").transform;
             letter3.gameObject.GetComponent<Rigidbody>().useGravity = false;
             letter3.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             lettershow = GameObject.FindWithTag("LetterShow");
             StartCoroutine(waitswitch1());
+        }
+
+        //Show after all Puzzles are done
+        if (Input.GetKeyDown(KeyCode.L) && !carrying && !carryingPuzzle && !carryingCup && puzzleCheck1 && puzzleCheck2)
+        {
+            winCheck = 1;
         }
 
         //Hide Letter
@@ -132,7 +152,6 @@ public class Raycast : MonoBehaviour
         //collision check on Sink
         if (collision.gameObject.tag == "Sink")
         {
-            Debug.Log("Hello World");
             if (Input.GetKeyDown(KeyCode.E) && carryingCup)
             {
                 holding.gameObject.transform.gameObject.tag = "Cup";
@@ -191,12 +210,37 @@ public class Raycast : MonoBehaviour
                 inventory.AddItem(item);
             }
 
+            //Move Closer to puzzle
+            if (!dontLag && hitGameobject.tag == "Code" && Input.GetKeyDown(KeyCode.E))
+            {         
+                transform.parent = null;
+                transform.parent = GameObject.Find("puzzlePos").transform;
+                transform.position = puzzlePos.position;
+                yPos.normalPos = 2;
+                iAmSpeed.speed = 0;
+                allowedRotate = true;
+                dontLag = true;
+                StartCoroutine(waitswitch7());
+            }
+
+            if (stopZoom && Input.GetKeyDown(KeyCode.Q))
+            {
+                transform.parent = null;
+                transform.parent = GameObject.Find("First Person Player").transform;
+                transform.position = FirstPersonPlayer.position;
+                iAmSpeed.speed = 1.6f;
+                yPos.normalPos = 1;
+                allowedRotate = false;
+                dontLag = false;
+                StartCoroutine(waitswitch8());
+            }
+
             //Pickup Objects
             if (hitGameobject.tag == "Puzzle" && Input.GetKeyDown(KeyCode.E) && !carrying && !carryingPuzzle && !carryingCup)
             {
                 hitGameobject.gameObject.transform.position = theDestination.position;
                 hitGameobject.gameObject.transform.rotation = theDestination.rotation;
-                hitGameobject.gameObject.transform.Rotate(90f, 180f, 0f);
+                hitGameobject.gameObject.transform.Rotate(0f, 180f, 0f);
                 hitGameobject.gameObject.transform.parent = GameObject.Find("Destination").transform;
                 hitGameobject.gameObject.GetComponent<Rigidbody>().useGravity = false;
                 hitGameobject.gameObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -445,7 +489,7 @@ public class Raycast : MonoBehaviour
             }
         }
     }
-
+    
     //Waiting time so you don't accidently double click
     IEnumerator waitswitch1()
     {
@@ -477,6 +521,16 @@ public class Raycast : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         carryingCup = false;
+    }
+    IEnumerator waitswitch7()
+    {
+        yield return new WaitForSeconds(0.2f);
+        stopZoom = true;
+    }
+    IEnumerator waitswitch8()
+    {
+        yield return new WaitForSeconds(0.2f);
+        stopZoom = false;
     }
     IEnumerator AddToInv()
     {

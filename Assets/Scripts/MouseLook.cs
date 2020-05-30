@@ -8,9 +8,10 @@ public class MouseLook : MonoBehaviour
     public float mouseSensitivity = 100f;
 
     public Transform playerBody;
-
+    public int normalPos = 1;
     float xRotation = 0f;
-
+    float yRotation = 0f;
+    
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -24,7 +25,17 @@ public class MouseLook : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -70f, 70f);
 
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseX);
+        yRotation += mouseX;
+
+        transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
+
+        if (normalPos == 1)
+        {
+            transform.position = new Vector3(transform.position.x, 2f, transform.position.z);
+        }
+        if (normalPos == 2)
+        {
+            transform.position = new Vector3(transform.position.x, 1.33f, transform.position.z);
+        }
     }
 }
