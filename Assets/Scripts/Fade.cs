@@ -7,6 +7,7 @@ public class Fade : MonoBehaviour
 {
     public Image blackFade;
     public Image letterFade;
+    public Image fadeNarrative;
     public Raycast winning;
     bool startOtherFade;
 
@@ -14,6 +15,8 @@ public class Fade : MonoBehaviour
     {
         blackFade.canvasRenderer.SetAlpha(0.0f);
         letterFade.canvasRenderer.SetAlpha(0.0f);
+
+        StartCoroutine(fadeOutNarrative());
     }
 
     void Update()
@@ -40,6 +43,12 @@ public class Fade : MonoBehaviour
     {
         Debug.Log("blackfade should start");
         blackFade.CrossFadeAlpha(1, 2, false);
+        yield return null;
+    }
+
+    IEnumerator fadeOutNarrative()
+    {
+        fadeNarrative.CrossFadeAlpha(0, 3, true);
         yield return null;
     }
 }
