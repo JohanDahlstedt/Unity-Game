@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Hanna's folder/oskar menu hanna edit.unity
+    path: Assets/Oskars stuff/oskar menu hanna edit.unity
     guid: 28ce163e78051e649b519c2d5bcf2981
   - enabled: 1
-    path: Assets/Hanna's folder/oskar instructions hanna ver.unity
+    path: Assets/Oskars stuff/oskar instructions hanna ver.unity
     guid: 26b9ddd7d2436394082fccee227535d5
   - enabled: 1
     path: Assets/Oskars stuff/Oskar WorkScene.unity

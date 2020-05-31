@@ -47,7 +47,7 @@ public class TurnOnWater : MonoBehaviour
 
         Debug.Log("Water Is Now Turned On");
        
-        transform.Rotate(0f, 60f, 0f);
+        transform.Rotate(0f, 15f, 0f);
         yield return new WaitForSeconds(0.01f);
 
         coroutineAllowed = true;

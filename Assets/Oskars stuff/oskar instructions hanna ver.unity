@@ -1132,21 +1132,21 @@ MonoBehaviour:
     WASD - Move
 
 
-    Left Mouse Button - Examine and Interact
+    Left Mouse Button - Examine/Inspect
 
 
     E
-    - Pick Up and Open Doors
+    - Interact
 
 
-    B - Open and Close Inventory
+    L - Check the Letter
 
 
-    ESC in game
-    - Quit
+    ESC in game - Quit
 
 
-    Items are used automatically'
+    Items are
+    used automatically'
 --- !u!222 &1307427430
 CanvasRenderer:
   m_ObjectHideFlags: 0
