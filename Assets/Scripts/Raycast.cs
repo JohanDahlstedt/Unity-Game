@@ -105,7 +105,7 @@ public class Raycast : MonoBehaviour
             letter2.gameObject.transform.gameObject.tag = "LetterShow";
             letter2.gameObject.transform.position = theDestination.position;
             letter2.gameObject.transform.rotation = theDestination.rotation;
-            letter2.gameObject.transform.Rotate(90f, 90f, 90f);
+            letter2.gameObject.transform.Rotate(0f, 0f, 0f);
             letter2.gameObject.transform.parent = GameObject.Find("Destination").transform;
             letter2.gameObject.GetComponent<Rigidbody>().useGravity = false;
             letter2.gameObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -119,7 +119,7 @@ public class Raycast : MonoBehaviour
             letter3.gameObject.transform.gameObject.tag = "LetterShow";
             letter3.gameObject.transform.position = theDestination.position;
             letter3.gameObject.transform.rotation = theDestination.rotation;
-            letter3.gameObject.transform.Rotate( 0f, 90f, 90f);
+            letter3.gameObject.transform.Rotate( 0f, 0f, 0f);
             letter3.gameObject.transform.parent = GameObject.Find("Destination").transform;
             letter3.gameObject.GetComponent<Rigidbody>().useGravity = false;
             letter3.gameObject.GetComponent<Rigidbody>().isKinematic = true;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Fade : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class Fade : MonoBehaviour
     {
         blackFade.canvasRenderer.SetAlpha(0.0f);
         letterFade.canvasRenderer.SetAlpha(0.0f);
-
+        
         StartCoroutine(fadeOutNarrative());
     }
 
@@ -29,6 +30,7 @@ public class Fade : MonoBehaviour
         if (startOtherFade)
         {
             StartCoroutine(fadeInBlack());
+            StartCoroutine(Quit());
         }
     }
 
@@ -50,5 +52,10 @@ public class Fade : MonoBehaviour
     {
         fadeNarrative.CrossFadeAlpha(0, 3, true);
         yield return null;
+    }
+    IEnumerator Quit()
+    {
+        yield return new WaitForSeconds(20f);
+        SceneManager.LoadScene(0);
     }
 }
