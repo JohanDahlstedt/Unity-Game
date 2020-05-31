@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Oskars stuff/Oskar WorkScene.unity
     guid: d809a8dc7cae9a541888ff795434f1e9
+  - enabled: 1
+    path: Assets/Johan's Stuff/Narrative Text.unity
+    guid: 4702d7fb4738a2045975b3192fc0ef61
+  - enabled: 1
+    path: Assets/Oskars stuff/Oskar Credits.unity
+    guid: ec16e7e36bfc8e246b9ffb171568a598
   m_configObjects: {}
